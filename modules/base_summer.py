@@ -204,6 +204,7 @@ class BaseSummer(Wallet):
 
                 file.write(f"{wallet:<45} {badges:^10} {level:^7} {challenges_completed:^20} {num_referrals:^15} {current_score:^15}\n")
 
+    @exception_handler('check stat')
     def check_stat(self):
         url = f'https://basehunt.xyz/api/profile/state?userAddress={self.address_wallet}&gameId=2'
         data = self.get_api_call_data_get(url)
