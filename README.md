@@ -59,23 +59,25 @@ python3.10 main.py
 13 - Stand With Crypto | Song A Day #5714     (0.0001 ETH - 500 points)
 14 - Stand with Crypto Pizza                  (0.0001 ETH - 500 points)
 15 - Endaoment X SWC Shield                   (0.0001 ETH - 500 points)
+16 - Stand with Crypto                        (0.0001 ETH - 500 points)
 
-16 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
-17 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
-18 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
-19 - Mint Introducing Smart Wallet            (Free - END)
-20 - Mint Stix                                (Free - 1000 points)
-21 - Mint Team Liquid Onchain Summer          (Free - 500 points)
-22 - Mint MPWish You Were Onchain             (Free - 1000 points)
+17 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
+18 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
+19 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
+20 - Mint Introducing Smart Wallet            (Free - END)
+21 - Mint Stix                                (END)
+22 - Mint Team Liquid Onchain Summer          (Free - 500 points)
+23 - Mint MPWish You Were Onchain             (Free - 1000 points)
 
-23 - Init account on Base Summer              (зарегать акки по своей рефке)
-24 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
-25 - Claim badge for Base Summer              (клейм доступных бейджей)
-26 - Claim point for NFT Base Summer          (собирает награды с заданий)
-27 - Mint free BASE domen                     (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+24 - Init account on Base Summer              (зарегать акки по своей рефке)
+25 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
+26 - Claim badge for Base Summer              (клейм доступных бейджей)
+27 - Claim point for NFT Base Summer          (собирает награды с заданий)
+28 - Mint free BASE domen                     (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+29 - Check Stat
 
-28 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 29)
-29 - Rus Сustom routes
+30 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 31)
+31 - Rus Сustom routes
 ```
 ---
 <h2>❤️ По всем вопросам в лс или чат
