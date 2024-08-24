@@ -220,7 +220,7 @@ if __name__ == '__main__':
 18 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
 19 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
 20 - Mint Introducing Smart Wallet            (Free - END)
-21 - Mint Stix                                (Free - 1000 points)
+21 - Mint Stix                                (END)
 22 - Mint Team Liquid Onchain Summer          (Free - 500 points)
 23 - Mint MPWish You Were Onchain             (Free - 1000 points)
 
