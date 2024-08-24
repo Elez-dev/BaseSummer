@@ -20,7 +20,7 @@ class Worker:
         dick = {}
         for number, key in keys_list:
 
-            address = web3_eth.eth.account.from_key(key).address
+            address = web3_eth.eth.account.from_key(key[0]).address
             new_routes = []
 
             if ROUTES_SHUFFLE is True:
