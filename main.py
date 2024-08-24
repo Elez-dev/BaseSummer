@@ -242,7 +242,7 @@ if __name__ == '__main__':
                 Worker.generate_route()
                 continue
 
-            if act in range(1, 30):
+            if act in range(1, 32):
                 break
 
         worker = Worker(act)
