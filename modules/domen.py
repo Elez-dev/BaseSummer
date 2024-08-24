@@ -33,6 +33,7 @@ class Domen(Wallet):
         name = ''
         person = Person('en')
         name += person.first_name()
+        name += '-'
         name += person.last_name()
         return name.lower()
 
