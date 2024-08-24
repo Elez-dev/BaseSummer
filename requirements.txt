@@ -1,0 +1,9 @@
+web3==6.19.0
+loguru==0.7.2
+pandas==2.2.0
+tqdm==4.66.2
+requests==2.31.0
+openpyxl==3.1.2
+msoffcrypto-tool==5.1.1
+ua-generator==1.0.4
+mimesis==17.0.0
