@@ -34,7 +34,7 @@ class Domen(Wallet):
         person = Person('en')
         name += person.first_name()
         name += person.last_name()
-        return name
+        return name.lower()
 
     @exception_handler('Mint domen')
     def register(self):
