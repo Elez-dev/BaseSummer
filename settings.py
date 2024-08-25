@@ -20,11 +20,11 @@ SLIPPAGE = 1
 
 RETRY = 2                              # Количество попыток при ошибках / фейлах
 TIME_DELAY = [30, 60]                  # Задержка после ТРАНЗАКЦИЙ     [min, max]
-TIME_ACCOUNT_DELAY = [3, 5]        # Задержка между АККАУНТАМИ     [min, max]
+TIME_ACCOUNT_DELAY = [30, 50]          # Задержка между АККАУНТАМИ     [min, max]
 TIME_DELAY_ERROR = [10, 20]            # Задержка при ошибках / фейлах [min, max]
 
-REF_CODE = ''                          # Ref code onchain summer (вставляйте рефку своего мейна)
-
+REF_CODE = '5cecb41a-969e-4eb7-83b8-b0c1609436a8'          # Ref code onchain summer (вставляйте рефку своего мейна)
+                                                           # в скобочках рефка -> wallet.coinbase.com/summer/share/summerpass?referral_id=(5cecb41a-969e-4eb7-83b8-b0c1609436a8)&summerpass_id=
 # Sold Token (ПРОДАЖА ТОКЕНОВ)
 
 odos_token = [
@@ -38,6 +38,7 @@ ROUTES = [
     ['mint_mister_miggles'],
     ['mint_stand_with_crypto'],
     ['mint_team_liquid'],
+    ['claim_badge'],
 ]
 '''
     Список доступных модулей
