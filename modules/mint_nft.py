@@ -4,29 +4,6 @@ from modules.retry import exception_handler
 from web3 import Web3
 import json as js
 
-abi = '''
-[
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "txHash",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes",
-        "name": "signature",
-        "type": "bytes"
-      }
-    ],
-    "name": "mint",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-]
-'''
-
 
 class MintNFT(Wallet):
     def __init__(self, private_key, chain, number, proxy):
