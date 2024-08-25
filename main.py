@@ -225,7 +225,7 @@ if __name__ == '__main__':
 16 - Stand with Crypto                        (0.0001 ETH - 500 points)
 17 - strut 001                                (0.0001 ETH - 500 points)
 18 - Crypto will bloom                        (0.0001 ETH - 500 points)
-19 - What if we added a S                     (0.0001 ETH - 500 points)
+19 - What if we added a S                     (0.0001 ETH - 1000 points)
 20 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
 21 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
 22 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
