@@ -60,9 +60,6 @@ class BaseSummer(Wallet):
     def check_point(self):
         url = 'https://basehunt.xyz/api/challenges/complete'
         challenge_ids = {
-            '6UuHdstl9MRFd4cgFf15kk': {
-                'Butterfly': 250
-            },
             '1iZiHPbqaIGW5F08bCit6J': {
                 'URC x Base Launch': 150
             },
