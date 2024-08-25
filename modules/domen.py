@@ -83,3 +83,42 @@ class Domen(Wallet):
         ).build_transaction(dick)
 
         self.send_transaction_and_wait(txn, f'Mint {name2} domen')
+
+    @exception_handler('Mint domen')
+    def register_paid(self):
+        name = self.generate_name()
+        name2 = name + '.base.eth'
+
+        available = self.contract.functions.available(name).call()
+        if available is True:
+            logger.info(f'Mint domen - {name}\n')
+        else:
+            raise
+
+        dick = {
+            'from': self.address_wallet,
+            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
+            'value': Web3.to_wei(0.0001, 'ether'),
+            **self.get_gas_price()
+        }
+
+        name_hash = self.namehash(name2)
+        payload = to_hex(encode(['bytes32', 'string'], [name_hash, name2]))
+
+        data = [
+            Web3.to_bytes(hexstr=f'0xd5fa2b00{Web3.to_hex(name_hash)[2:]}000000000000000000000000{self.address_wallet[2:]}'),
+            Web3.to_bytes(hexstr=f'0x77372213{payload[2:]}')
+        ]
+
+        txn = self.contract.functions.register(
+            (
+                name,
+                self.address_wallet,
+                31557600,
+                Web3.to_checksum_address('0xC6d566A56A1aFf6508b41f6c90ff131615583BCD'),
+                data,
+                True
+            )
+        ).build_transaction(dick)
+
+        self.send_transaction_and_wait(txn, f'Mint {name2} domen')

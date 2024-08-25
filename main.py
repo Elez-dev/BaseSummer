@@ -178,12 +178,16 @@ class Worker:
                     continue
 
             if self.action == 30:
+                base = Domen(key, Base, str_number, proxy)
+                base.register_paid()
+
+            if self.action == 31:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_stat()
                 time.sleep(1)
                 continue
 
-            if self.action == 32:
+            if self.action == 33:
                 router = CustomRouter(key, str_number, proxy)
                 res = router.run()
                 if res is False:
@@ -232,21 +236,22 @@ if __name__ == '__main__':
 26 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
 27 - Claim badge for Base Summer              (клейм доступных бейджей)
 28 - Claim point for NFT Base Summer          (собирает награды с заданий)
-29 - Mint free BASE domen                     (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
-30 - Check Stat
+29 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+30 - Mint paid Base domain                    (0.0001 ETH) 
+31 - Check Stat
 
-31 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
-32 - Rus Сustom routes
+32 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+33 - Rus Сustom routes
 ''')
 
             time.sleep(0.1)
             act = int(input('Choose an action: '))
 
-            if act == 31:
+            if act == 32:
                 Worker.generate_route()
                 continue
 
-            if act in range(1, 33):
+            if act in range(1, 34):
                 break
 
         worker = Worker(act)
