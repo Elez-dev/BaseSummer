@@ -141,7 +141,10 @@ class MintNFT(Wallet):
             '0x2382456097cC12ce54052084e9357612497FD6be',  # Stand With Crypto | Song A Day #5714
             '0x4beAdC00E2A6b6C4fAc1a43FF340E5D71CBB9F77',  # Stand with Crypto Pizza
             '0x4e4431BDdC2a896b1268ded02807b78c318C82e0',  # Endaoment X SWC
-            '0x146B627a763DFaE78f6A409CEF5B8ad84dDD4150'   # Stand with Crypto
+            '0x146B627a763DFaE78f6A409CEF5B8ad84dDD4150',  # Stand with Crypto
+            '0x9FF8Fd82c0ce09caE76e777f47d536579AF2Fe7C',  # strut 001
+            '0x651b0A2b9FB9C186fB6C9a9CEddf25B791Ad5753',  # Crypto will bloom
+            '0xea50e58B518435AD2CeCE84d1e099b2e0878B9cF'  # What if we added a S
         ]
 
         dick = {
@@ -151,30 +154,20 @@ class MintNFT(Wallet):
             **self.get_gas_price()
         }
 
-        if nft_number in range(13):
-            contract = self.web3.eth.contract(
-                address=Web3.to_checksum_address(address[nft_number]),
-                abi=js.load(open('./abi/abi1.txt')))
-            name = contract.functions.name().call()
-            if contract.functions.balanceOf(self.address_wallet).call() > 0:
-                logger.info(f'NFT {name} already minted\n')
-                return False
-            txn = contract.functions.mintWithComment(
-                self.address_wallet,
-                1,
-                ''
-            ).build_transaction(dick)
+        contract = self.web3.eth.contract(
+            address=Web3.to_checksum_address(address[nft_number]),
+            abi=js.load(open('./abi/abi1.txt')))
+        name = contract.functions.name().call()
+        if contract.functions.balanceOf(self.address_wallet).call() > 0:
+            logger.info(f'NFT {name} already minted\n')
+            return False
+        txn = contract.functions.mintWithComment(
+            self.address_wallet,
+            1,
+            ''
+        ).build_transaction(dick)
 
-            self.send_transaction_and_wait(txn, f'Mint {name} successfully')
-
-        if nft_number == 13:
-            return self.mint_web_app()
-
-        if nft_number == 14:
-            return self.mint_liquid()
-
-        if nft_number == 15:
-            return self.mint_mister_migless()
+        self.send_transaction_and_wait(txn, f'Mint {name} successfully')
 
     @exception_handler('Mint smart wallet nft')
     def mint_smart_wallet(self):
@@ -190,21 +183,6 @@ class MintNFT(Wallet):
         txn.update({'gas': self.web3.eth.estimate_gas(txn)})
 
         self.send_transaction_and_wait(txn, f'Mint Introducing Smart Wallet successfully')
-
-    @exception_handler('Mint STIX Launch Tourname')
-    def mint_stix(self):
-        txn = {
-            'chainId': self.web3.eth.chain_id,
-            'from': self.address_wallet,
-            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
-            'to': Web3.to_checksum_address('0xa7891c87933BB99Db006b60D8Cb7cf68141B492f'),
-            'data': f'0x84bb1e42000000000000000000000000{self.address_wallet[2:]}0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000180000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001d4da48b00000000',
-            **self.get_gas_price()
-        }
-
-        txn.update({'gas': self.web3.eth.estimate_gas(txn)})
-
-        self.send_transaction_and_wait(txn, f'Mint STIX Launch Tourname successfully')
 
     @exception_handler('Mint Buildathon')
     def mint_buildathon(self):
@@ -228,25 +206,4 @@ class MintNFT(Wallet):
 
         txn.update({'gas': self.web3.eth.estimate_gas(txn)})
 
-        self.send_transaction_and_wait(txn, f'Mint STIX Launch Tourname successfully')
-
-    @exception_handler('Mint WYWO')
-    def mint_wywo(self):
-        url = 'https://www.wishyouwereonchain.com/api/generate-signature'
-        data = self.get_api_call_data_get(url)
-        buffer = data['data']['buffer']
-        signature = data['data']['signature']
-
-        dick = {
-            'from': self.address_wallet,
-            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
-            **self.get_gas_price()
-        }
-
-        contract = self.web3.eth.contract(address=Web3.to_checksum_address('0x4242Dd24148dC0Cb58d3c802237dDb5C2bDaa735'), abi=abi)
-        txn = contract.functions.mint(
-            buffer,
-            signature
-        ).build_transaction(dick)
-
-        self.send_transaction_and_wait(txn, f'Mint MPWishYouWereOnchain successfully')
+        self.send_transaction_and_wait(txn, f'Mint Buildathon successfully')

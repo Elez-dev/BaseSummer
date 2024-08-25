@@ -20,10 +20,10 @@ SLIPPAGE = 1
 
 RETRY = 2                              # Количество попыток при ошибках / фейлах
 TIME_DELAY = [30, 60]                  # Задержка после ТРАНЗАКЦИЙ     [min, max]
-TIME_ACCOUNT_DELAY = [50, 100]         # Задержка между АККАУНТАМИ     [min, max]
+TIME_ACCOUNT_DELAY = [3, 5]        # Задержка между АККАУНТАМИ     [min, max]
 TIME_DELAY_ERROR = [10, 20]            # Задержка при ошибках / фейлах [min, max]
 
-REF_CODE = '5cecb41a-969e-4eb7-83b8-b0c1609436a8'    # Ref code onchain summer (вставляйте рефку своего мейна)
+REF_CODE = ''                          # Ref code onchain summer (вставляйте рефку своего мейна)
 
 # Sold Token (ПРОДАЖА ТОКЕНОВ)
 
@@ -38,7 +38,6 @@ ROUTES = [
     ['mint_mister_miggles'],
     ['mint_stand_with_crypto'],
     ['mint_team_liquid'],
-    ['mint_wywo'],
 ]
 '''
     Список доступных модулей
@@ -59,13 +58,15 @@ ROUTES = [
         'mint_coinbase_wallet'         # Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
         'mint_smart_wallet'            # Mint Introducing Smart Wallet       (Free - поинты не получить, но нфт можно минтить)
         'mint_team_liquid'             # Team Liquid Onchain Summer          (Free - 500 points)    
-        'mint_wywo'                    # Wish You Were Onchain               (Free - 1000 points)
         'mint_mister_miggles'          # Mister Miggles                      (0.0002 ETH - 1000 points)
         'mint_toshi_vibe'              # Toshi Vibe                          (0.0001 ETH - 1000 points)
         'mint_song_a_day'              # Stand With Crypto | Song A Day #57  (0.0001 ETH - 500 points)
         'mint_crypto_pizza'            # Stand with Crypto Pizza             (0.0001 ETH - 500 points)
         'mint_endaoment_shield'        # Endaoment X SWC Shield              (0.0001 ETH - 500 points)
         'mint_stand_with_crypto'       # Stand with Crypto                   (0.0001 ETH - 500 points)
+        'mint_strut001'                # strut 001                           (0.0001 ETH - 500 points)
+        'mint_crypto_will_bloom'       # Crypto will bloom                   (0.0001 ETH - 500 points)
+        'mint_what_if_we_added'        # What if we added a S                (0.0001 ETH - 500 points)
         
         'init_account_on_base_summer'  # Зарегать акки по своей рефке
         'spin_roulette'                # Крутим рулетку на всех акках        (Нужен 1 уровень - 250+ points)

@@ -79,23 +79,31 @@ class CustomRouter:
 
     def mint_coinbase_wallet(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_web_app()
+
+    def mint_strut001(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_base_summer_nft(13)
 
-    def mint_team_liquid(self):
+    def mint_crypto_will_bloom(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_base_summer_nft(14)
 
-    def mint_mister_miggles(self):
+    def mint_what_if_we_added(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_base_summer_nft(15)
+
+    def mint_team_liquid(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_liquid()
+
+    def mint_mister_miggles(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_mister_migless()
 
     def mint_smart_wallet(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_smart_wallet()
-
-    def mint_stix(self):
-        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
-        nft.mint_stix()
 
     def init_account_on_base_summer(self):
         base = BaseSummer(self.private_key, Base, self.number, self.proxy)
@@ -112,10 +120,6 @@ class CustomRouter:
     def claim_badge(self):
         base = BaseSummer(self.private_key, Base, self.number, self.proxy)
         base.claim_badge()
-
-    def mint_wywo(self):
-        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
-        nft.mint_wywo()
 
     def register_domain(self):
         base = Domen(self.private_key, Base, self.number, self.proxy)

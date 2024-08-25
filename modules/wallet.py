@@ -53,7 +53,7 @@ class Wallet(TgBot):
                 ip = self.session.get('https://ip.beget.ru/')
                 logger.success(f'Proxy installed successfully, Your current ip - {ip.text}')
             except Exception as error:
-                logger.info(f'Proxy not installed\n{error}')
+                logger.error(f'Proxy not installed\n{error}')
                 self.session.proxies = {}
 
     @staticmethod
