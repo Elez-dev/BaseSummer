@@ -6,8 +6,8 @@ from modules.retry import exception_handler
 import ua_generator
 import requests
 
-with open('./address.txt', "r", encoding='utf-8') as f:
-    address = [row.strip() for row in f]
+# with open('./address.txt', "r", encoding='utf-8') as f:
+#     address = [row.strip() for row in f]
 
 
 class BaseSummer(Wallet):
@@ -22,22 +22,19 @@ class BaseSummer(Wallet):
     @exception_handler('Init account')
     def init_account(self):
         url = 'https://basehunt.xyz/api/profile/opt-in'
+        json = {
+            'gameId': 2,
+            'referralId': REF_CODE,
+            'userAddress': self.address_wallet
+        }
 
-        for _ in range(8888):
-            addr = address.pop(0)
-            json = {
-                'gameId': 2,
-                'referralId': REF_CODE,
-                'userAddress': addr
-            }
+        logger.info(json)
 
-            logger.info(json)
-
-            data = self.get_api_call_data_post(url, json)
-            if data['success'] is True:
-                logger.success('Init success')
-            else:
-                logger.error(data)
+        data = self.get_api_call_data_post(url, json)
+        if data['success'] is True:
+            logger.success('Init success')
+        else:
+            logger.error(data)
 
     def check_spin_available(self):
         url = f'https://basehunt.xyz/api/spin-the-wheel?gameId=2&userAddress={self.address_wallet}'
