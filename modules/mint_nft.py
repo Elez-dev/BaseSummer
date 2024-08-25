@@ -55,6 +55,7 @@ class MintNFT(Wallet):
 
         self.send_transaction_and_wait(txn, f'Mint BASE PYTHON ZORB on OpenSea')
 
+    @exception_handler('Mint web app')
     def mint_web_app(self):
         contract = self.web3.eth.contract(
             address=Web3.to_checksum_address('0x6B033e8199ce2E924813568B716378aA440F4C67'),
@@ -79,6 +80,7 @@ class MintNFT(Wallet):
 
         self.send_transaction_and_wait(txn, f'Mint {name} successfully')
 
+    @exception_handler('Mint team liquid')
     def mint_liquid(self):
         contract = self.web3.eth.contract(
             address=Web3.to_checksum_address('0x1b9Ac8580d2E81d7322f163362831448E7FcAD1B'),
@@ -102,6 +104,7 @@ class MintNFT(Wallet):
 
         self.send_transaction_and_wait(txn, f'Mint {name} successfully')
 
+    @exception_handler('Mint mister migless')
     def mint_mister_migless(self):
         contract = self.web3.eth.contract(
             address=Web3.to_checksum_address('0xDc03a75F96f38615B3eB55F0F289d36E7A706660'),
