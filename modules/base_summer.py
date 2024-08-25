@@ -93,9 +93,6 @@ class BaseSummer(Wallet):
             '5Hyw2HMBfOBFDvCBkvdVmX': {
                 'Stand With Crypto | Song A Day #5714': 500
             }, 
-            'ocsChallenge_bd5208b5-ff1e-4f5b-8522-c4d4ebb795b7': {
-                'STIX Launch Tournament Pass': 1000
-            },
             'ocsChallenge_3809bf6d-a2d1-4e15-84e7-74beac310661': {
                 'Base Turns One': 250
             },
