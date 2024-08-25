@@ -6,18 +6,11 @@ from modules.retry import exception_handler
 import ua_generator
 import requests
 
-# with open('./address.txt', "r", encoding='utf-8') as f:
-#     address = [row.strip() for row in f]
 
 
 class BaseSummer(Wallet):
     def __init__(self, private_key, chain, number, proxy):
         super().__init__(private_key, chain, number, proxy)
-
-    # def get_ref(self):
-    #     url = f'https://basehunt.xyz/api/profile/state?userAddress={self.address_wallet}&gameId=2'
-    #     data = self.get_api_call_data_get(url)
-    #     return data['referralData']['referralCode']
 
     @exception_handler('Init account')
     def init_account(self):
@@ -74,6 +67,15 @@ class BaseSummer(Wallet):
             },
             '2XaiAPDQ8WwG5CUWfMMYaU': {
                 'Claim your BaseName.base.eth': 1000
+            },
+            '71fCEn2cIwqXqLE6wYxGl0': {
+                'What if we added a Stand With Crypto Shield': 1000
+            },
+            'S3DyUSaz6mYehsypyOqPD': {
+                'Crypto will bloom': 500
+            },
+            'strut 001': {
+                'Crypto will bloom': 500
             },
             '6VRBNN6qr2algysZeorek8': {
                 'Team Liquid Onchain Summer': 500
