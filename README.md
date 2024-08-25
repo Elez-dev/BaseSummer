@@ -60,24 +60,25 @@ python3.10 main.py
 14 - Stand with Crypto Pizza                  (0.0001 ETH - 500 points)
 15 - Endaoment X SWC Shield                   (0.0001 ETH - 500 points)
 16 - Stand with Crypto                        (0.0001 ETH - 500 points)
+17 - strut 001                                (0.0001 ETH - 500 points)
+18 - Crypto will bloom                        (0.0001 ETH - 500 points)
+19 - What if we added a S                     (0.0001 ETH - 500 points)
+20 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
+21 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
+22 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
+23 - Mint Introducing Smart Wallet            (Free - END)
+24 - Mint Team Liquid Onchain Summer          (Free - 500 points)
 
-17 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
-18 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
-19 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
-20 - Mint Introducing Smart Wallet            (Free - END)
-21 - Mint Stix                                (END)
-22 - Mint Team Liquid Onchain Summer          (Free - 500 points)
-23 - Mint MPWish You Were Onchain             (Free - 1000 points)
+25 - Init account on Base Summer              (зарегать акки по своей рефке)
+26 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
+27 - Claim badge for Base Summer              (клейм доступных бейджей)
+28 - Claim point for NFT Base Summer          (собирает награды с заданий)
+29 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+30 - Mint paid Base domain                    (0.0001 ETH) 
+31 - Check Stat
 
-24 - Init account on Base Summer              (зарегать акки по своей рефке)
-25 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
-26 - Claim badge for Base Summer              (клейм доступных бейджей)
-27 - Claim point for NFT Base Summer          (собирает награды с заданий)
-28 - Mint free BASE domen                     (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
-29 - Check Stat
-
-30 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 31)
-31 - Rus Сustom routes
+32 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+33 - Rus Сustom routes
 ```
 ---
 <h2>❤️ По всем вопросам в лс или чат
