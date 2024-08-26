@@ -74,8 +74,8 @@ class BaseSummer(Wallet):
             'S3DyUSaz6mYehsypyOqPD': {
                 'Crypto will bloom': 500
             },
-            'strut 001': {
-                'Crypto will bloom': 500
+            '5c3PqZ2EGVbzQ2CQXL1vWK': {
+                'strut 001': 500
             },
             '6VRBNN6qr2algysZeorek8': {
                 'Team Liquid Onchain Summer': 500
