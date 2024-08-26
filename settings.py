@@ -66,7 +66,6 @@ ROUTES = [
         'mint_endaoment_shield'        # Endaoment X SWC Shield              (0.0001 ETH - 500 points)
         'mint_stand_with_crypto'       # Stand with Crypto                   (0.0001 ETH - 500 points)
         'mint_strut001'                # strut 001                           (0.0001 ETH - 500 points)
-        'mint_crypto_will_bloom'       # Crypto will bloom                   (0.0001 ETH - 500 points)
         'mint_what_if_we_added'        # What if we added a S                (0.0001 ETH - 1000 points)
         
         'init_account_on_base_summer'  # Зарегать акки по своей рефке
