@@ -71,6 +71,21 @@ class BaseSummer(Wallet):
             '71fCEn2cIwqXqLE6wYxGl0': {
                 'What if we added a Stand With Crypto Shield': 1000
             },
+            '3wnaF1zwkxXMotK2grz0kO': {
+                'En garde': 500
+            },
+            '3Po39fHlC66muE3X5IHNfs': {
+                'Duality in motion': 500
+            },
+            '1VaefmSAUYw5vW1lxc0Viq': {
+                'Toshi x SWC 3': 500
+            },
+            '6kv6tqF4mCQiGn5SQUwdps': {
+                'The Creative Shield': 500
+            },
+            'OE6zO6T5M3COHSFcIIvmA': {
+                'Crypto Vibe': 500
+            },
             'S3DyUSaz6mYehsypyOqPD': {
                 'Crypto will bloom': 500
             },
@@ -94,7 +109,10 @@ class BaseSummer(Wallet):
             },
             '5Hyw2HMBfOBFDvCBkvdVmX': {
                 'Stand With Crypto | Song A Day #5714': 500
-            }, 
+            },
+            'ocsChallenge_3b1c2886-3168-45c7-b2cd-b590cde66c61': {
+                'Juicy Adventure': 1000
+            },
             'ocsChallenge_3809bf6d-a2d1-4e15-84e7-74beac310661': {
                 'Base Turns One': 250
             },
