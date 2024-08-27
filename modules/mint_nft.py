@@ -1,8 +1,12 @@
 from modules.wallet import Wallet
 from loguru import logger
 from modules.retry import exception_handler
+from eth_account.messages import encode_defunct
 from web3 import Web3
 import json as js
+from datetime import datetime
+import ua_generator
+import requests
 
 
 class MintNFT(Wallet):
@@ -124,7 +128,12 @@ class MintNFT(Wallet):
             '0x146B627a763DFaE78f6A409CEF5B8ad84dDD4150',  # Stand with Crypto
             '0x9FF8Fd82c0ce09caE76e777f47d536579AF2Fe7C',  # strut 001
             '0x651b0A2b9FB9C186fB6C9a9CEddf25B791Ad5753',  # Crypto will bloom
-            '0xea50e58B518435AD2CeCE84d1e099b2e0878B9cF'  # What if we added a S
+            '0xea50e58B518435AD2CeCE84d1e099b2e0878B9cF',  # What if we added a S
+            '0x6a43B7e3ebFc915A8021dd05f07896bc092d1415',  # Crypto Vibe(CV)
+            '0x892Bc2468f20D40F4424eE6A504e354D9D7E1866',  # The Creative Shield
+            '0xb620bEdCe2615A3F35273A08b3e45e3431229A60',  # Toshi x SWC 3
+            '0x5b45498D20d24D9c6Da165eDcd0eBcE0636176Ae',  # duality in motion
+            '0x1f006edBc0Bcc528A743ee7A53b5e3dD393A1Df6'  # en garde
         ]
 
         dick = {
@@ -187,3 +196,94 @@ class MintNFT(Wallet):
         txn.update({'gas': self.web3.eth.estimate_gas(txn)})
 
         self.send_transaction_and_wait(txn, f'Mint Buildathon successfully')
+
+    def get_nonce(self):
+        url = 'https://gram.voyage/api/ocs/nonce'
+        data = self.get_api_call_data_get(url)
+        return data['data']['nonce']
+
+    def get_token(self):
+        issued_at = datetime.now().strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + 'Z'
+        nonce = self.get_nonce()
+        url = 'https://gram.voyage/api/ocs/verify'
+        text = f'gram.voyage wants you to sign in with your Ethereum account:\n'\
+               f'{self.address_wallet}\n\n'\
+               f'Sign in Grampus.\n\n'\
+               f'URI: https://gram.voyage\n'\
+               f'Version: 1\n'\
+               f'Chain ID: 8453\n'\
+               f'Nonce: {nonce}\n'\
+               f'Issued At: {issued_at}'
+
+        message = encode_defunct(text=text)
+        signed_message = self.web3.eth.account.sign_message(message, self.private_key)
+        signature = signed_message.signature
+        json = {
+            'message': {
+                'address': self.address_wallet,
+                'chainId': 8453,
+                'domain': "gram.voyage",
+                'issuedAt': issued_at,
+                'nonce': nonce,
+                'statement': 'Sign in Grampus.',
+                'uri': 'https://gram.voyage',
+                'version': '1'
+            },
+            'signature': Web3.to_hex(signature)
+        }
+
+        data = self.get_api_call_data_post(url, json)
+        return data['data']['token']
+
+    def get_data(self):
+        url = 'https://gram.voyage/api/ocs/minting'
+        ua = ua_generator.generate(device='desktop')
+        headers = {
+            'authorization': self.get_token(),
+            'Origin': 'https://gram.voyage',
+            'Referer': 'https://gram.voyage/game/juicyadventure',
+            'Sec-Ch-Ua': ua.ch.brands,
+            'Sec-Ch-Ua-Mobile': ua.ch.mobile,
+            'Sec-Ch-Ua-Platform': ua.ch.platform,
+            'Sec-Fetch-Dest': 'empty',
+            'Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-site',
+            'User-Agent': ua.text
+        }
+        json = {
+            'address': self.address_wallet,
+            'nonce': 'd1d40b6fb16aa388',
+            'order': [1, 2, 3]
+        }
+        with requests.Session() as s:
+            response = s.post(url=url, json=json, timeout=5, headers=headers)
+        data = response.json()
+        token_id = data['data']['tokenId']
+        rarity = data['data']['rarity']
+        signature = data['data']['signature']
+        return token_id, rarity, signature
+
+    @exception_handler('Mint Juice Pack')
+    def mint_juice(self):
+        contract = self.web3.eth.contract(
+            address=Web3.to_checksum_address('0x6ba5Ba71810c1196f20123B57B66C9ed2A5dBd76'),
+            abi=js.load(open('./abi/juice.txt')))
+        name = contract.functions.name().call()
+        if contract.functions.balanceOf(self.address_wallet).call() > 0:
+            logger.info(f'NFT {name} already minted\n')
+            return False
+
+        data = self.get_data()
+
+        dick = {
+            'from': self.address_wallet,
+            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
+            **self.get_gas_price()
+        }
+
+        txn = contract.functions.mintJuicyPack(
+            data[0],
+            data[1],
+            data[2]
+        ).build_transaction(dick)
+        self.send_transaction_and_wait(txn, f'Mint {name} successfully')

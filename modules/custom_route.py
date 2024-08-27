@@ -93,6 +93,30 @@ class CustomRouter:
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_base_summer_nft(15)
 
+    def mint_crypto_vibe(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(16)
+
+    def mint_creative_shield(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(17)
+
+    def mint_toshi3(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(18)
+
+    def mint_duality_in_motion(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(19)
+
+    def mint_en_garde(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(20)
+
+    def mint_juicy_adventure(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_juice()
+
     def mint_team_liquid(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_liquid()

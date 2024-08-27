@@ -20,7 +20,7 @@ SLIPPAGE = 1
 
 RETRY = 2                              # Количество попыток при ошибках / фейлах
 TIME_DELAY = [30, 60]                  # Задержка после ТРАНЗАКЦИЙ     [min, max]
-TIME_ACCOUNT_DELAY = [30, 50]          # Задержка между АККАУНТАМИ     [min, max]
+TIME_ACCOUNT_DELAY = [200, 300]          # Задержка между АККАУНТАМИ     [min, max]
 TIME_DELAY_ERROR = [10, 20]            # Задержка при ошибках / фейлах [min, max]
 
 REF_CODE = '5cecb41a-969e-4eb7-83b8-b0c1609436a8'          # Ref code onchain summer (вставляйте рефку своего мейна)
@@ -67,6 +67,12 @@ ROUTES = [
         'mint_stand_with_crypto'       # Stand with Crypto                   (0.0001 ETH - 500 points)
         'mint_strut001'                # strut 001                           (0.0001 ETH - 500 points)
         'mint_what_if_we_added'        # What if we added a S                (0.0001 ETH - 1000 points)
+        'mint_crypto_vibe'             # Crypto Vibe(CV)                     (0.0001 ETH - 500 points)
+        'mint_creative_shield'         # The Creative Shield                 (0.0001 ETH - 500 points)
+        'mint_toshi3'                  # Toshi x SWC 3                       (0.0001 ETH - 500 points)
+        'mint_duality_in_motion'       # duality in motion                   (0.0001 ETH - 500 points)
+        'mint_en_garde'                # en garde                            (0.0001 ETH - 500 points)
+        'mint_juicy_adventure'         # Juicy Adventure Onch                (Free - 1000 points)
         
         'init_account_on_base_summer'  # Зарегать акки по своей рефке
         'spin_roulette'                # Крутим рулетку на всех акках        (Нужен 1 уровень - 250+ points)

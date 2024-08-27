@@ -135,59 +135,84 @@ class Worker:
 
             if self.action == 20:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_web_app()
+                nft.mint_base_summer_nft(16)
 
             if self.action == 21:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_buildathon()
+                nft.mint_base_summer_nft(17)
 
             if self.action == 22:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_mister_migless()
+                nft.mint_base_summer_nft(18)
 
             if self.action == 23:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_smart_wallet()
+                nft.mint_base_summer_nft(19)
 
             if self.action == 24:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_liquid()
+                nft.mint_base_summer_nft(20)
 
             if self.action == 25:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_web_app()
+
+            if self.action == 26:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_buildathon()
+
+            if self.action == 27:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_mister_migless()
+
+            if self.action == 28:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_smart_wallet()
+
+            if self.action == 29:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_liquid()
+
+            if self.action == 30:
+                nft = MintNFT(key, Base, str_number, proxy)
+                nft.mint_juice()
+
+
+            if self.action == 31:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.init_account()
 
-            if self.action == 26:
+            if self.action == 32:
                 base = BaseSummer(key, Base, str_number, proxy)
                 res = base.spin_the_roulette()
                 if res is False:
                     continue
 
-            if self.action == 27:
+            if self.action == 33:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.claim_badge()
 
-            if self.action == 28:
+            if self.action == 34:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_point()
 
-            if self.action == 29:
+            if self.action == 35:
                 base = Domen(key, Base, str_number, proxy)
                 res = base.register()
                 if res is False:
                     continue
 
-            if self.action == 30:
+            if self.action == 36:
                 base = Domen(key, Base, str_number, proxy)
                 base.register_paid()
 
-            if self.action == 31:
+            if self.action == 37:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_stat()
                 time.sleep(1)
                 continue
 
-            if self.action == 33:
+            if self.action == 39:
                 router = CustomRouter(key, str_number, proxy)
                 res = router.run()
                 if res is False:
@@ -226,32 +251,38 @@ if __name__ == '__main__':
 17 - strut 001                                (0.0001 ETH - 500 points)
 18 - Crypto will bloom                        (0.0001 ETH - 500 points)
 19 - What if we added a S                     (0.0001 ETH - 1000 points)
-20 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
-21 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
-22 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
-23 - Mint Introducing Smart Wallet            (Free - END)
-24 - Mint Team Liquid Onchain Summer          (Free - 500 points)
+20 - Crypto Vibe(CV)                          (0.0001 ETH - 500 points)
+21 - The Creative Shield                      (0.0001 ETH - 500 points)
+22 - Toshi x SWC 3                            (0.0001 ETH - 500 points)
+23 - duality in motion                        (0.0001 ETH - 500 points)
+24 - en garde                                 (0.0001 ETH - 500 points)
+25 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
+26 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
+27 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
+28 - Mint Introducing Smart Wallet            (Free - END)
+29 - Mint Team Liquid Onchain Summer          (Free - 500 points)
+30 - Mint Juicy Adventure Onch                (Free - 1000 points)
 
-25 - Init account on Base Summer              (зарегать акки по своей рефке)
-26 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
-27 - Claim badge for Base Summer              (клейм доступных бейджей)
-28 - Claim point for NFT Base Summer          (собирает награды с заданий)
-29 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
-30 - Mint paid Base domain                    (0.0001 ETH) 
-31 - Check Stat
+31 - Init account on Base Summer              (зарегать акки по своей рефке)
+32 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
+33 - Claim badge for Base Summer              (клейм доступных бейджей)
+34 - Claim point for NFT Base Summer          (собирает награды с заданий)
+35 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+36 - Mint paid Base domain                    (0.0001 ETH) 
+37 - Check Stat
 
-32 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
-33 - Rus Сustom routes
+38 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+39 - Rus Сustom routes
 ''')
 
             time.sleep(0.1)
             act = int(input('Choose an action: '))
 
-            if act == 32:
+            if act == 38:
                 Worker.generate_route()
                 continue
 
-            if act in range(1, 34):
+            if act in range(1, 40):
                 break
 
         worker = Worker(act)
