@@ -53,6 +53,39 @@ class BaseSummer(Wallet):
     def check_point(self):
         url = 'https://basehunt.xyz/api/challenges/complete'
         challenge_ids = {
+            '4MMQPGoZviSqLoJgaVDY05': {
+                'Live and Let Live!': 5000
+            },
+            '3fYDO7ZCCl91Tg7u6cMHBa': {
+                'Mint the vision': 1000
+            },
+            'ocsChallenge_b3f47fc6-3649-4bad-9e10-7244fbe1d484': {
+                'Forbes Web3 INSPIRE': 1000
+            },
+            '1FH5jNuTVIRrPBUNtKrFtQ': {
+                'Stand With Crypto Shield Rune': 500
+            },
+            '4EHmwNf6hrcTFnume2AUhv': {
+                'Shielding the wonder': 500
+            },
+            '7JZn2HJuvLZRoE8R8a8OBp': {
+                'Earth Stands with Crypto': 500
+            },
+            '4JS8wKnPtZ0lE34C5crIUk': {
+                '⌐◨-◨ Stand With Crypto': 500
+            },
+            '43EAydXs7EVNGkR9UZ5JJH': {
+                'we stand, we build': 500
+            },
+            '7430li8iAyirOzGFhNbL3w': {
+                'Let The Shield Shine': 500
+            },
+            '6ENasd7Ikvs7VBlC02rsCg': {
+                'All for One': 500
+            },
+            '66QmTDpn63hpgrkVgRK0ve': {
+                'Let's Stand': 500
+            },
             '1iZiHPbqaIGW5F08bCit6J': {
                 'URC x Base Launch': 150
             },
