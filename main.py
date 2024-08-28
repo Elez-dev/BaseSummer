@@ -44,6 +44,11 @@ class Worker:
 
         logger.success('Successfully generated route\n')
 
+    @staticmethod
+    def mint_with_comment(key, str_number, proxy, nft_number):
+        nft = MintNFT(key, Base, str_number, proxy)
+        return nft.mint_base_summer_nft(nft_number - 4)
+
     def work(self):
         i = 0
         for number, acc in keys_list:
@@ -69,150 +74,78 @@ class Worker:
                         continue
                     sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
-            if self.action == 4:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(0)
+            if self.action in range(4, 35):
+                res = self.mint_with_comment(key, str_number, proxy, self.action)
+                if res is False:
+                    continue
 
-            if self.action == 5:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(1)
-
-            if self.action == 6:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(2)
-
-            if self.action == 7:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(3)
-
-            if self.action == 8:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(4)
-
-            if self.action == 9:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(5)
-
-            if self.action == 10:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(6)
-
-            if self.action == 11:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(7)
-
-            if self.action == 12:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(8)
-
-            if self.action == 13:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(9)
-
-            if self.action == 14:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(10)
-
-            if self.action == 15:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(11)
-
-            if self.action == 16:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(12)
-
-            if self.action == 17:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(13)
-
-            if self.action == 18:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(14)
-
-            if self.action == 19:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(15)
-
-            if self.action == 20:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(16)
-
-            if self.action == 21:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(17)
-
-            if self.action == 22:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(18)
-
-            if self.action == 23:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(19)
-
-            if self.action == 24:
-                nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_base_summer_nft(20)
-
-            if self.action == 25:
+            if self.action == 35:
                 nft = MintNFT(key, Base, str_number, proxy)
                 nft.mint_web_app()
 
-            if self.action == 26:
+            if self.action == 36:
                 nft = MintNFT(key, Base, str_number, proxy)
                 nft.mint_buildathon()
 
-            if self.action == 27:
+            if self.action == 37:
                 nft = MintNFT(key, Base, str_number, proxy)
                 nft.mint_mister_migless()
 
-            if self.action == 28:
+            if self.action == 38:
                 nft = MintNFT(key, Base, str_number, proxy)
                 nft.mint_smart_wallet()
 
-            if self.action == 29:
+            if self.action == 39:
                 nft = MintNFT(key, Base, str_number, proxy)
                 nft.mint_liquid()
 
-            if self.action == 30:
+            if self.action == 40:
                 nft = MintNFT(key, Base, str_number, proxy)
-                nft.mint_juice()
+                res = nft.mint_juice()
+                if res is False:
+                    continue
 
+            if self.action == 41:
+                nft = MintNFT(key, Base, str_number, proxy)
+                res = nft.mint_forbes()
+                if res is False:
+                    continue
 
-            if self.action == 31:
+            if self.action == 42:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.init_account()
 
-            if self.action == 32:
+            if self.action == 43:
                 base = BaseSummer(key, Base, str_number, proxy)
                 res = base.spin_the_roulette()
                 if res is False:
                     continue
 
-            if self.action == 33:
+            if self.action == 44:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.claim_badge()
 
-            if self.action == 34:
+            if self.action == 45:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_point()
 
-            if self.action == 35:
+            if self.action == 46:
                 base = Domen(key, Base, str_number, proxy)
                 res = base.register()
                 if res is False:
                     continue
 
-            if self.action == 36:
+            if self.action == 47:
                 base = Domen(key, Base, str_number, proxy)
                 base.register_paid()
 
-            if self.action == 37:
+            if self.action == 48:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_stat()
                 time.sleep(1)
                 continue
 
-            if self.action == 39:
+            if self.action == 50:
                 router = CustomRouter(key, str_number, proxy)
                 res = router.run()
                 if res is False:
@@ -256,33 +189,44 @@ if __name__ == '__main__':
 22 - Toshi x SWC 3                            (0.0001 ETH - 500 points)
 23 - duality in motion                        (0.0001 ETH - 500 points)
 24 - en garde                                 (0.0001 ETH - 500 points)
-25 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
-26 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
-27 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
-28 - Mint Introducing Smart Wallet            (Free - END)
-29 - Mint Team Liquid Onchain Summer          (Free - 500 points)
-30 - Mint Juicy Adventure Onch                (Free - 1000 points)
+25 - Live and Let Live!                       (0.0005 ETH - 5000 points)
+26 - Mint the vision                          (0.0001 ETH - 1000 points)
+27 - Stand With Crypto Shield Rune            (0.0001 ETH - 500 points)
+28 - Shielding the wonder                     (0.0001 ETH - 500 points)
+29 - Earth Stands with Crypto                 (0.0001 ETH - 500 points)
+30 - ⌐◨-◨ Stand With Crypto                   (0.0001 ETH - 500 points)
+31 - we stand, we build                       (0.0001 ETH - 500 points)
+32 - Let The Shield Shine                     (0.0001 ETH - 500 points)
+33 - All for One                              (0.0001 ETH - 500 points)
+34 - Even Sam Stands with Crypto              (0.0001 ETH - 500 points)
+35 - Mint Introducing: Coinbase Wallet        (0.0001 ETH - 250 points)
+36 - Mint Buildathon                          (0.0002 ETH - нужна ТОЛЬКО для бейджа Builder)
+37 - Mint Mister Miggles                      (0.0002 ETH - 1000 points)
+38 - Mint Introducing Smart Wallet            (Free - END)
+39 - Mint Team Liquid Onchain Summer          (Free - 500 points)
+40 - Mint Juicy Adventure Onch                (Free - 1000 points)
+41 - Mint Forbes Web3 INSPIRE                 (Free - 1000 points)
 
-31 - Init account on Base Summer              (зарегать акки по своей рефке)
-32 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
-33 - Claim badge for Base Summer              (клейм доступных бейджей)
-34 - Claim point for NFT Base Summer          (собирает награды с заданий)
-35 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
-36 - Mint paid Base domain                    (0.0001 ETH) 
-37 - Check Stat
+42 - Init account on Base Summer              (зарегать акки по своей рефке)
+43 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
+44 - Claim badge for Base Summer              (клейм доступных бейджей)
+45 - Claim point for NFT Base Summer          (собирает награды с заданий)
+46 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+47 - Mint paid Base domain                    (0.0001 ETH) 
+48 - Check Stat
 
-38 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
-39 - Rus Сustom routes
+49 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+50 - Rus Сustom routes
 ''')
 
             time.sleep(0.1)
             act = int(input('Choose an action: '))
 
-            if act == 38:
+            if act == 49:
                 Worker.generate_route()
                 continue
 
-            if act in range(1, 40):
+            if act in range(1, 51):
                 break
 
         worker = Worker(act)

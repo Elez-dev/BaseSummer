@@ -137,7 +137,7 @@ class Wallet(TgBot):
                 self.web3.middleware_onion.inject(geth_poa_middleware, layer=0)
             except: pass
 
-        return {'maxFeePerGas': self.web3.eth.gas_price, 'maxPriorityFeePerGas': int(self.web3.eth.gas_price * 0.1)}
+        return {'maxFeePerGas': int(self.web3.eth.gas_price * 1.1), 'maxPriorityFeePerGas': int(self.web3.eth.gas_price * 0.1)}
 
     def get_api_call_data_post(self, url, json):
         call_data = self.session.post(url, json=json, timeout=60)

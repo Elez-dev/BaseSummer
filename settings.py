@@ -73,6 +73,17 @@ ROUTES = [
         'mint_duality_in_motion'       # duality in motion                   (0.0001 ETH - 500 points)
         'mint_en_garde'                # en garde                            (0.0001 ETH - 500 points)
         'mint_juicy_adventure'         # Juicy Adventure Onch                (Free - 1000 points)
+        'mint_live_and_let_live'        # Live and Let Live!                 (0.0005 ETH - 5000 points)
+        'mint_the_vision'               # Mint the vision                    (0.0001 ETH - 1000 points)
+        'mint_shield_rune'              # Stand With Crypto Shield Rune      (0.0001 ETH - 500 points)
+        'mint_shielding_the_wonder'     # Shielding the wonder               (0.0001 ETH - 500 points)
+        'mint_earth_stands_with_crypto' # Earth Stands with Crypto           (0.0001 ETH - 500 points)
+        'mint_with_crypto'              # ⌐◨-◨ Stand With Crypto             (0.0001 ETH - 500 points)
+        'mint_we_build'                 # we stand, we build                 (0.0001 ETH - 500 points)
+        'mint_the_shield_shine'         # Let The Shield Shine               (0.0001 ETH - 500 points)
+        'mint_all_for_one'              # All for One                        (0.0001 ETH - 500 points)
+        'mint_even_sam'                 # Even Sam Stands with Crypto        (0.0001 ETH - 500 points)
+        'mint_forbes'                   # Forbes Web3 INSPIRE                (Free - 1000 points)
         
         'init_account_on_base_summer'  # Зарегать акки по своей рефке
         'spin_roulette'                # Крутим рулетку на всех акках        (Нужен 1 уровень - 250+ points)

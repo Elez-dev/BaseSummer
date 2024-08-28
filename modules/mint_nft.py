@@ -133,7 +133,17 @@ class MintNFT(Wallet):
             '0x892Bc2468f20D40F4424eE6A504e354D9D7E1866',  # The Creative Shield
             '0xb620bEdCe2615A3F35273A08b3e45e3431229A60',  # Toshi x SWC 3
             '0x5b45498D20d24D9c6Da165eDcd0eBcE0636176Ae',  # duality in motion
-            '0x1f006edBc0Bcc528A743ee7A53b5e3dD393A1Df6'  # en garde
+            '0x1f006edBc0Bcc528A743ee7A53b5e3dD393A1Df6',  # en garde
+            '0x279dFFD2b14a4A60e266bEfb0D2c10E695D58113',  # Live and Let Live!
+            '0x8605522B075aFeD48f9987E573E0AA8E572B8452',  # Mint the vision
+            '0x13fCcd944B1D88d0670cae18A00abD272256DDeE',  # Stand With Crypto Shield Rune
+            '0x6A3dA97Dc82c098038940Db5CB2Aa6B1541f2ebe',  # Shielding the wonder
+            '0xd1E1da0b62761b0df8135aE4e925052C8f618458',  # Earth Stands with Crypto
+            '0x03c6eF731453bfEc65a800F83f026ad011D8Abec',  # ⌐◨-◨ Stand With Crypto
+            '0xEb9A3540E6A3dc31d982A47925d5831E02a3Fe1e',  # we stand, we build
+            '0x2a8e46E78BA9667c661326820801695dcf1c403E',  # Let The Shield Shine
+            '0x8e50c64310b55729F8EE67c471E052B1Cd7AF5b3',  # All for One
+            '0x95ff853A4C66a5068f1ED8Aaf7c6F4e3bDBEBAE1'  # Even Sam Stands with Crypto
         ]
 
         dick = {
@@ -142,6 +152,9 @@ class MintNFT(Wallet):
             'value': Web3.to_wei(0.0001, 'ether'),
             **self.get_gas_price()
         }
+
+        if nft_number == 21:
+            dick.update({'value': Web3.to_wei(0.0005, 'ether')})
 
         contract = self.web3.eth.contract(
             address=Web3.to_checksum_address(address[nft_number]),
@@ -286,4 +299,27 @@ class MintNFT(Wallet):
             data[1],
             data[2]
         ).build_transaction(dick)
+        self.send_transaction_and_wait(txn, f'Mint {name} successfully')
+
+    @exception_handler('Mint Forbes Web3 INSPIRE')
+    def mint_forbes(self):
+        contract = self.web3.eth.contract(
+            address=Web3.to_checksum_address('0x0821D16eCb68FA7C623f0cD7c83C8D5Bd80bd822'),
+            abi=js.load(open('./abi/abi1.txt')))
+        name = contract.functions.name().call()
+        if contract.functions.balanceOf(self.address_wallet).call() > 0:
+            logger.info(f'NFT {name} already minted\n')
+            return False
+
+        txn = {
+            'chainId': self.web3.eth.chain_id,
+            'from': self.address_wallet,
+            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
+            'to': Web3.to_checksum_address('0x0821D16eCb68FA7C623f0cD7c83C8D5Bd80bd822'),
+            'data': f'0x84bb1e42000000000000000000000000{self.address_wallet[2:]}0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000000000000000000000001800000000000000000000000000000000000000000000000000000000000000080ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001d4da48b00000000',
+            **self.get_gas_price()
+        }
+
+        txn.update({'gas': self.web3.eth.estimate_gas(txn)})
+
         self.send_transaction_and_wait(txn, f'Mint {name} successfully')

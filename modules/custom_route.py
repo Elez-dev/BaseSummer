@@ -113,6 +113,50 @@ class CustomRouter:
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_base_summer_nft(20)
 
+    def mint_live_and_let_live(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(21)
+
+    def mint_the_vision(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(22)
+
+    def mint_shield_rune(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(23)
+
+    def mint_shielding_the_wonder(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(24)
+
+    def mint_earth_stands_with_crypto(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(25)
+
+    def mint_with_crypto(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(26)
+
+    def mint_we_build(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(27)
+
+    def mint_the_shield_shine(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(28)
+
+    def mint_all_for_one(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(29)
+
+    def mint_even_sam(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_base_summer_nft(30)
+
+    def mint_forbes(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_forbes()
+
     def mint_juicy_adventure(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_juice()
