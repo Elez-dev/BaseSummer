@@ -84,7 +84,7 @@ class BaseSummer(Wallet):
                 'All for One': 500
             },
             '66QmTDpn63hpgrkVgRK0ve': {
-                'Let's Stand': 500
+                'Lets Stand': 500
             },
             '1iZiHPbqaIGW5F08bCit6J': {
                 'URC x Base Launch': 150
