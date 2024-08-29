@@ -189,7 +189,6 @@ if __name__ == '__main__':
 22 - Toshi x SWC 3                            (0.0001 ETH - 500 points)
 23 - duality in motion                        (0.0001 ETH - 500 points)
 24 - en garde                                 (0.0001 ETH - 500 points)
-25 - Live and Let Live!                       (0.0005 ETH - 5000 points)
 26 - Mint the vision                          (0.0001 ETH - 1000 points)
 27 - Stand With Crypto Shield Rune            (0.0001 ETH - 500 points)
 28 - Shielding the wonder                     (0.0001 ETH - 500 points)
