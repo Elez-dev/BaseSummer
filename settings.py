@@ -73,7 +73,6 @@ ROUTES = [
         'mint_duality_in_motion'       # duality in motion                   (0.0001 ETH - 500 points)
         'mint_en_garde'                # en garde                            (0.0001 ETH - 500 points)
         'mint_juicy_adventure'         # Juicy Adventure Onch                (Free - 1000 points)
-        'mint_live_and_let_live'        # Live and Let Live!                 (0.0005 ETH - 5000 points)
         'mint_the_vision'               # Mint the vision                    (0.0001 ETH - 1000 points)
         'mint_shield_rune'              # Stand With Crypto Shield Rune      (0.0001 ETH - 500 points)
         'mint_shielding_the_wonder'     # Shielding the wonder               (0.0001 ETH - 500 points)
