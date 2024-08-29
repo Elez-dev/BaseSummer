@@ -53,9 +53,6 @@ class BaseSummer(Wallet):
     def check_point(self):
         url = 'https://basehunt.xyz/api/challenges/complete'
         challenge_ids = {
-            '4MMQPGoZviSqLoJgaVDY05': {
-                'Live and Let Live!': 5000
-            },
             '3fYDO7ZCCl91Tg7u6cMHBa': {
                 'Mint the vision': 1000
             },
