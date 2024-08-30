@@ -157,6 +157,10 @@ class CustomRouter:
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_forbes()
 
+    def mint_truworld(self):
+        nft = MintNFT(self.private_key, Base, self.number, self.proxy)
+        nft.mint_truworld_onchain()
+
     def mint_juicy_adventure(self):
         nft = MintNFT(self.private_key, Base, self.number, self.proxy)
         nft.mint_juice()

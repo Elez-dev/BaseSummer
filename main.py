@@ -112,40 +112,46 @@ class Worker:
                     continue
 
             if self.action == 42:
+                nft = MintNFT(key, Base, str_number, proxy)
+                res = nft.mint_truworld_onchain()
+                if res is False:
+                    continue
+
+            if self.action == 43:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.init_account()
 
-            if self.action == 43:
+            if self.action == 44:
                 base = BaseSummer(key, Base, str_number, proxy)
                 res = base.spin_the_roulette()
                 if res is False:
                     continue
 
-            if self.action == 44:
+            if self.action == 45:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.claim_badge()
 
-            if self.action == 45:
+            if self.action == 46:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_point()
 
-            if self.action == 46:
+            if self.action == 47:
                 base = Domen(key, Base, str_number, proxy)
                 res = base.register()
                 if res is False:
                     continue
 
-            if self.action == 47:
+            if self.action == 48:
                 base = Domen(key, Base, str_number, proxy)
                 base.register_paid()
 
-            if self.action == 48:
+            if self.action == 49:
                 base = BaseSummer(key, Base, str_number, proxy)
                 base.check_stat()
                 time.sleep(1)
                 continue
 
-            if self.action == 50:
+            if self.action == 52:
                 router = CustomRouter(key, str_number, proxy)
                 res = router.run()
                 if res is False:
@@ -205,27 +211,28 @@ if __name__ == '__main__':
 39 - Mint Team Liquid Onchain Summer          (Free - 500 points)
 40 - Mint Juicy Adventure Onch                (Free - 1000 points)
 41 - Mint Forbes Web3 INSPIRE                 (Free - 1000 points)
+42 - Mint Truworld Onchain Mobile Pass        (Free - 500 points)
 
-42 - Init account on Base Summer              (зарегать акки по своей рефке)
-43 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
-44 - Claim badge for Base Summer              (клейм доступных бейджей)
-45 - Claim point for NFT Base Summer          (собирает награды с заданий)
-46 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
-47 - Mint paid Base domain                    (0.0001 ETH) 
-48 - Check Stat
+43 - Init account on Base Summer              (зарегать акки по своей рефке)
+44 - Spin roulette on Base Summer             (рулетка ТОЛЬКО после первого уровня: 250+ points)
+45 - Claim badge for Base Summer              (клейм доступных бейджей)
+46 - Claim point for NFT Base Summer          (собирает награды с заданий)
+47 - Mint free BASE domain                    (нужен 3 уровень - сначала набираем его, а потом клеймим домен)
+48 - Mint paid Base domain                    (0.0001 ETH) 
+49 - Check Stat
 
-49 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
-50 - Rus Сustom routes
+50 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+51 - Rus Сustom routes
 ''')
 
             time.sleep(0.1)
             act = int(input('Choose an action: '))
 
-            if act == 49:
+            if act == 50:
                 Worker.generate_route()
                 continue
 
-            if act in range(1, 51):
+            if act in range(1, 52):
                 break
 
         worker = Worker(act)

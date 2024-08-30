@@ -323,3 +323,26 @@ class MintNFT(Wallet):
         txn.update({'gas': self.web3.eth.estimate_gas(txn)})
 
         self.send_transaction_and_wait(txn, f'Mint {name} successfully')
+
+    @exception_handler('Mint Truworld Onchain Mobile Pass')
+    def mint_truworld_onchain(self):
+        contract = self.web3.eth.contract(
+            address=Web3.to_checksum_address('0xf2b0F524e754217905f043A0759d594DA892A59e'),
+            abi=js.load(open('./abi/truworld.txt')))
+        name = contract.functions.name().call()
+        if contract.functions.balanceOf(self.address_wallet, 0).call() > 0:
+            logger.info(f'NFT {name} already minted\n')
+            return False
+
+        txn = {
+            'chainId': self.web3.eth.chain_id,
+            'from': self.address_wallet,
+            'nonce': self.web3.eth.get_transaction_count(self.address_wallet),
+            'to': Web3.to_checksum_address('0xf2b0F524e754217905f043A0759d594DA892A59e'),
+            'data': f'0x57bc3d78000000000000000000000000{self.address_wallet[2:]}00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000001a0000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000640000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+            **self.get_gas_price()
+        }
+
+        txn.update({'gas': self.web3.eth.estimate_gas(txn)})
+
+        self.send_transaction_and_wait(txn, f'Mint {name} successfully')

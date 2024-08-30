@@ -83,6 +83,7 @@ ROUTES = [
         'mint_all_for_one'              # All for One                        (0.0001 ETH - 500 points)
         'mint_even_sam'                 # Even Sam Stands with Crypto        (0.0001 ETH - 500 points)
         'mint_forbes'                   # Forbes Web3 INSPIRE                (Free - 1000 points)
+        'mint_truworld'                 # Truworld Onchain Mobile Pass       (Free - 500 points)
         
         'init_account_on_base_summer'  # Зарегать акки по своей рефке
         'spin_roulette'                # Крутим рулетку на всех акках        (Нужен 1 уровень - 250+ points)

@@ -3,9 +3,6 @@ from settings import REF_CODE
 from modules.wallet import Wallet
 from loguru import logger
 from modules.retry import exception_handler
-import ua_generator
-import requests
-
 
 
 class BaseSummer(Wallet):
