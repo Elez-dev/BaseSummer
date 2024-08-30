@@ -53,6 +53,9 @@ class BaseSummer(Wallet):
     def check_point(self):
         url = 'https://basehunt.xyz/api/challenges/complete'
         challenge_ids = {
+            'ocsChallenge_b00cf94a-51aa-4359-abf7-2cada197d0ca': {
+                'Truworld Onchain Summer Pass': 500
+            },
             '3fYDO7ZCCl91Tg7u6cMHBa': {
                 'Mint the vision': 1000
             },
