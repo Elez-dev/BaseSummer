@@ -1,3 +1,5 @@
+import time
+import random
 from modules.wallet import Wallet
 from loguru import logger
 from modules.retry import exception_handler
@@ -29,13 +31,39 @@ class Domen(Wallet):
         return node
 
     @staticmethod
-    def generate_name():
+    def add_random_digits(s):
+        digit1 = str(random.randint(0, 9))
+        digit2 = str(random.randint(0, 9))
+
+        position1 = random.randint(0, len(s))
+        position2 = random.randint(0, len(s))
+
+        if position1 > position2:
+            position1, position2 = position2, position1
+
+        s = s[:position1] + digit1 + s[position1:]
+        s = s[:position2 + 1] + digit2 + s[position2 + 1:]
+
+        return s
+
+    def generate_name(self):
         name = ''
         person = Person('en')
         name += person.first_name()
         name += '-'
         name += person.last_name()
-        return name.lower()
+        name = self.add_random_digits(name)
+        while True:
+            if len(name) < 10:
+                continue
+            available = self.contract.functions.available(name.lower()).call()
+            if available is True:
+                logger.info(f'Mint domen - {name.lower()}\n')
+                return name.lower()
+
+            else:
+                time.sleep(1)
+                continue
 
     @exception_handler('Mint domen')
     def register(self):
@@ -46,12 +74,6 @@ class Domen(Wallet):
 
         name = self.generate_name()
         name2 = name + '.base.eth'
-
-        available = self.contract.functions.available(name).call()
-        if available is True:
-            logger.info(f'Mint domen - {name}\n')
-        else:
-            raise
 
         dick = {
             'from': self.address_wallet,
@@ -88,12 +110,6 @@ class Domen(Wallet):
     def register_paid(self):
         name = self.generate_name()
         name2 = name + '.base.eth'
-
-        available = self.contract.functions.available(name).call()
-        if available is True:
-            logger.info(f'Mint domen - {name}\n')
-        else:
-            raise
 
         dick = {
             'from': self.address_wallet,
