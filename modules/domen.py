@@ -47,13 +47,13 @@ class Domen(Wallet):
         return s
 
     def generate_name(self):
-        name = ''
-        person = Person('en')
-        name += person.first_name()
-        name += '-'
-        name += person.last_name()
-        name = self.add_random_digits(name)
         while True:
+            name = ''
+            person = Person('en')
+            name += person.first_name()
+            name += '-'
+            name += person.last_name()
+            name = self.add_random_digits(name)
             if len(name) < 10:
                 continue
             available = self.contract.functions.available(name.lower()).call()
