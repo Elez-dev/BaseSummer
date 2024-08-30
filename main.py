@@ -151,7 +151,7 @@ class Worker:
                 time.sleep(1)
                 continue
 
-            if self.action == 52:
+            if self.action == 51:
                 router = CustomRouter(key, str_number, proxy)
                 res = router.run()
                 if res is False:
@@ -221,7 +221,7 @@ if __name__ == '__main__':
 48 - Mint paid Base domain                    (0.0001 ETH) 
 49 - Check Stat
 
-50 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 32)
+50 - Generate Сustom routes                   (сначала запускаем этот модуль, потом модуль 51)
 51 - Rus Сustom routes
 ''')
 
